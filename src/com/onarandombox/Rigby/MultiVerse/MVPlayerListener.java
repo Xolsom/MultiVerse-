@@ -43,7 +43,7 @@ public class MVPlayerListener extends PlayerListener {
 
     /**
      * Construct our PlayerListener.
-     * 
+     *
      * @param instance
      * @param configMV
      */
@@ -194,7 +194,7 @@ public class MVPlayerListener extends PlayerListener {
         final Location loc = pl.getLocation();
 
         MVPlayerSession ps = this.plugin.getPlayerSession(pl);
-        if (ps.getLocation().getBlockX() == loc.getBlockX() && ps.getLocation().getBlockY() == loc.getBlockY() && ps.getLocation().getBlockZ() == loc.getBlockZ()) {
+        if (ps == null || ps.getLocation().getBlockX() == loc.getBlockX() && ps.getLocation().getBlockY() == loc.getBlockY() && ps.getLocation().getBlockZ() == loc.getBlockZ()) {
             return;
         } else {
             ps.setLocation(loc); // Update the Players Session to the new Location.
